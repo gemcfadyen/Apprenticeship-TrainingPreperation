@@ -26,10 +26,16 @@ public class PrimesTest {
 		Assert.assertEquals(Arrays.asList(3), factorsOf(3));
 	}
 	
+	@Test
+	public void factorsOf4() {
+		Assert.assertEquals(Arrays.asList(2, 2), factorsOf(4));
+	}
+	
 	private List<Integer> factorsOf(int number) {
 		List<Integer> factors = new ArrayList<>();
-		if(number % 2 == 0) {
+		while (number % 2 == 0) {
 			factors.add(2);
+			number = number / 2;
 		}
 		
 		if(number % 3 == 0) {
