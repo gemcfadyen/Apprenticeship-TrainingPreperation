@@ -49,18 +49,21 @@ public class PrimesTest {
 	private List<Integer> factorsOf(int number) {
 		List<Integer> factors = new ArrayList<>();
 		
-		while (number % 2 == 0) {
-			factors.add(2);
-			number = number / 2;
+		int prime = 2;
+		while (number % prime == 0) {
+			factors.add(prime);
+			number = number / prime;
 		}
 		
-		while(number % 3 == 0) {
-			factors.add(3);
-			number = number / 3;
+		prime = 3;
+		while(number % prime == 0) {
+			factors.add(prime);
+			number = number / prime;
 		}
 		
-		if(number % 5 == 0) {
-			factors.add(5);
+		prime = 5;
+		if(number % prime == 0) {
+			factors.add(prime);
 		}
 		
 		return factors;
