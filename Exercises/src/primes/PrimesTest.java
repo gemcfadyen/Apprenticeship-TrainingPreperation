@@ -41,15 +41,22 @@ public class PrimesTest {
 		Assert.assertEquals(Arrays.asList(2, 3), factorsOf(6));
 	}
 	
+	@Test
+	public void factorsOf9() {
+		Assert.assertEquals(Arrays.asList(3, 3), factorsOf(9));
+	}
+	
 	private List<Integer> factorsOf(int number) {
 		List<Integer> factors = new ArrayList<>();
+		
 		while (number % 2 == 0) {
 			factors.add(2);
 			number = number / 2;
 		}
 		
-		if(number % 3 == 0) {
+		while(number % 3 == 0) {
 			factors.add(3);
+			number = number / 3;
 		}
 		
 		if(number % 5 == 0) {
