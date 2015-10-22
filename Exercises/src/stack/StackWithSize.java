@@ -24,6 +24,8 @@ public class StackWithSize {
 	}
 
 	public int pop() {
-		return values[indexOfNextFreeSlot - 1];
+		int poppedValue = values[indexOfNextFreeSlot - 1];
+		indexOfNextFreeSlot--;
+		return poppedValue;
 	}
 }

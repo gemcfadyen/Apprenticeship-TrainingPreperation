@@ -22,7 +22,7 @@ public class StackTest {
 		Assert.assertEquals(14, stack.pop());
 	}
 
-	@Test (expected = IndexOutOfBoundsException.class)
+	@Test(expected = IndexOutOfBoundsException.class)
 	public void takingFromAnEmptyStackThrowsExcpeption() {
 		Stack stack = new Stack();
 
@@ -49,4 +49,19 @@ public class StackTest {
 		Assert.assertEquals(10, stack.size());
 	}
 
+	@Test(expected = IndexOutOfBoundsException.class)
+	public void popsFromEmptyStack() {
+		Stack stack = new Stack();
+		stack.pop();
+	}
+	
+	@Test
+	public void popsMultipleNumbersFromStack() {
+		Stack stack = new Stack();
+		stack.push(1);
+		stack.push(2);
+		
+		Assert.assertEquals(2, stack.pop());
+		Assert.assertEquals(1, stack.pop());
+	}
 }

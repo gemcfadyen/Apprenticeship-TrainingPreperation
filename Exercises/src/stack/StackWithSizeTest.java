@@ -53,4 +53,14 @@ public class StackWithSizeTest {
 
 		Assert.assertEquals(20, stack.size());
 	}
+	
+	@Test
+	public void popsMultipleNumbersFromStack() {
+		StackWithSize stack = new StackWithSize(2);
+		stack.push(1);
+		stack.push(2);
+		
+		Assert.assertEquals(2, stack.pop());
+		Assert.assertEquals(1, stack.pop());
+	}
 }
